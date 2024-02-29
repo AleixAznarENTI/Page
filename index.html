@@ -4,6 +4,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
         <title>Page</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
@@ -12,7 +15,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html">HOME</a>
+                        <a href="index.html" class="active">HOME</a>
                     </li>
                     <li>
                         <a href="">CV</a>
@@ -30,15 +33,46 @@
             </nav>
         </header>
         <main>
-            <section>
-                <h1>MI PAGINA</h1>
+            <img class="MainImage" src="VectorialDraws/undraw_city_life_gnpr.svg" alt="svg-image"/>
+            <img class="ConnectImage" src="VectorialDraws/undraw_dashed-underline.svg" alt="svg-connect"/>
+            <img class="Indicator1" src="VectorialDraws/undraw_fun-arrow.svg" alt="arrow"/>
+            <img class="Indicator2" src="VectorialDraws/undraw_arrow.svg" alt="arrow"/>
+            <section class="PaginaPrincipal">
+                <h1>ALEIX</h1>
+                <h1>AZNAR</h1>
+            </section>
+            <section class="MainMenu">
+                <img class="bar" src="VectorialDraws/undraw_bar-chart.svg" alt="barChart"/>
+                <p>CONTENIDOS</p>
+                <ul>
+                    <li>
+                        <a href="index.html" class="active">HOME</a>
+                    </li>
+                    <li>
+                        <a href="">CV</a>
+                    </li>
+                    <li>
+                        <a href="">AFICIONES</a>
+                    </li>
+                    <li>
+                        <a href="">CONTACTO</a>
+                    </li>
+                    <li>
+                        <a href="">JUEGO</a>
+                    </li>
+                </ul>
+                <img class="Underline" src="VectorialDraws/undraw_double-underline.svg" alt="underline"/>
+                <img class="Chevronse" src="VectorialDraws/undraw_chevrons.svg" alt="chevrons"/>
+                <img class="Circle" src="VectorialDraws/undraw_circled-plus.svg" alt="circled"/>
+                <img class="Tareas" src="VectorialDraws/undraw_asymmetric-parallels.svg" alt="menu"/>
             </section>
         </main>
-        <footer>
+        <footer class="Cabecera">
+            <p>Copyright 2024 ©</p>
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html">HOME</a>
+                        <a href="index.html" class="active">HOME</a>
                     </li>
                     <li>
                         <a href="">CV</a>
@@ -54,7 +88,19 @@
                     </li>
                 </ul>
             </nav>
-            <p>Copyright 2024 ©</p>
         </footer>
+        <div class="cursor" id="cursor"></div>
     </body>
+    <script>
+        
+        let cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove',function mousePosition(e){
+            let mouseX = e.clientX;
+            let mouseY = e.clientY;
+            
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+        });
+    
+    </script>
 </html>

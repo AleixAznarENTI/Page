@@ -1,3 +1,17 @@
+html{
+    cursor: none;
+}
+
+.cursor{
+  pointer-events: none;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: black;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+}
+
 .lato-regular {
   font-family: "Lato", sans-serif;
   font-weight: 400;
@@ -10,14 +24,45 @@
   font-style: normal;
 }
 
+
+.roboto-slab-<uniquifier> {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+main{
+    min-height: 81vh;
+    background-image: linear-gradient(#FF6646, #FFCD46)
+}
+
 body{
     margin: 0;
     padding: 0;
 }
+
+header{
+    background-color: #FF6646;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FFCD46;
+}
+
+header, footer{
+        min-height: 9.5vh;
+}
+
 nav{
     margin: 0;
     padding: 0;
-    
 }
 
 .Cabecera{
@@ -25,14 +70,14 @@ nav{
     padding: 0;
 	display: flex;
 	flex-direction: row;
-    background-color: #333333;
     font-family: "Lato", sans-serif;
     font-weight: 900;
     font-style: normal;
 }
 
 .Cabecera ul{
-    margin: 0;
+    margin: 8px;
+    margin-bottom: 8px;
     padding: 0;
 	list-style: none;
 }
@@ -47,4 +92,207 @@ nav{
     color: white;
     display:block;
     padding: 8px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 8px;
 }
+
+.Cabecera a.active{
+    cursor: none;
+    color: darkslategrey;
+    border-radius: 5px;
+    background-color:cornsilk; 
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+.Cabecera a:hover{
+    cursor: none;
+    transition: 300ms;
+    color: darkslategrey;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+
+.Cabecera p{
+    color: grey;
+    margin-left: 8px;
+}
+
+.mainCentral{
+    position: relative;
+}
+.MainImage{
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    margin-top: 0%;
+    margin-left: 5%;
+    opacity: 50%;
+}
+
+.Indicator1{
+    position: absolute;
+    transform: rotate(45deg);
+    margin-left: 55%;
+    margin-top: 33%;
+}
+.Indicator2{
+    position: absolute;
+    transform: rotate(135deg);
+    margin-left: 91%;
+}
+
+.ConnectImage{
+    position: absolute;
+    transform: rotate(90deg);
+    height: 30%;
+    width: 20%;
+    margin-left: 40%;
+    margin-top: 10%;
+    opacity: 70%;
+}
+
+.MainMenu{
+    background-color: white;
+    min-height: 70%;
+    min-width: 30%;
+    position: absolute;
+    margin-left: 60vw;
+    margin-top: 2.5vw;
+    border-radius: 20px;
+    box-shadow: 20px -16px teal;
+}
+
+
+.MainMenu p{
+  text-align: center;
+  font-size: 40px;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.MainMenu ul {
+  list-style: none;
+    display: flex;
+    flex-wrap: nowrap | wrap | wrap-reverse;
+    flex-flow: column wrap;
+    column-gap: 60px;
+  align-content: stretch;
+  margin: 0;
+  margin-top: 50px;
+  padding: 0;
+  width: 100%;
+}
+.bar{
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.Underline{
+    position: absolute;
+    margin-left: 43%;
+    margin-top: 5px;
+}
+
+.Chevronse{
+    transition: 300ms;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    bottom: 35px;
+    left: 100px;
+}
+
+.Circle{
+    transition: 300ms;
+    position: absolute;
+    width: 5%;
+    height: 5%;
+    bottom: 35px;
+    left: 215px;
+}
+
+.Tareas{
+    position: absolute;
+    transition: 300ms;
+    width: 5%;
+    height: 5%;
+    bottom: 35px;
+    left: 330px;
+}
+
+.Chevronse:hover{
+    transition: 300ms;
+    width: 7%;
+    height: 7%;
+}
+
+.Circle:hover{
+    transition: 300ms;
+    width: 7%;
+    height: 7%;
+}
+
+.Tareas:hover{
+    transition: 300ms;
+    width: 7%;
+    height: 7%;
+}
+
+.MainMenu li{
+    margin: 5px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.MainMenu li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.MainMenu li a.active{
+    background-color: aquamarine;
+}
+
+.MainMenu li a:hover {
+    transition: 300ms;
+  cursor: none;
+  background-color: #555;
+  color: white;
+}
+
+.PaginaPrincipal{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    height: 60%;
+    margin: auto;
+    
+    
+}
+
+.PaginaPrincipal h1{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 150px;
+}
+
+.PaginaPrincipal h1:hover{
+    transition: 300ms;
+    color: antiquewhite;
+}
+
