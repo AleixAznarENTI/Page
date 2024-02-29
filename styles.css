@@ -1,0 +1,7 @@
+.Cabecera{
+	display: flex;
+	flex-direction: row;
+}
+.Cabecera#ul{
+	list-style: none;
+}
