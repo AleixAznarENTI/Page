@@ -15,10 +15,10 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html" class="active">HOME</a>
+                        <a href="index.html" >HOME</a>
                     </li>
                     <li>
-                        <a href="CV.html">CV</a>
+                        <a href="CV.html" class="active">CV</a>
                     </li>
                     <li>
                         <a href="aficiones.html">AFICIONES</a>
@@ -33,38 +33,17 @@
             </nav>
         </header>
         <main>
-            <img class="MainImage" src="VectorialDraws/undraw_city_life_gnpr.svg" alt="svg-image"/>
-            <img class="ConnectImage" src="VectorialDraws/undraw_dashed-underline.svg" alt="svg-connect"/>
-            <img class="Indicator1" src="VectorialDraws/undraw_fun-arrow.svg" alt="arrow"/>
-            <img class="Indicator2" src="VectorialDraws/undraw_arrow.svg" alt="arrow"/>
-            <section class="PaginaPrincipal">
-                <h1 class="animTitle1">ALEIX</h1>
-                <h1 class="animTitle1">AZNAR</h1>
+            <section class="optionCV">
+                <h1>INFO</h1>
+                <button type="button" id="Expr" onclick=showExpr()>Experiencia Laboral</button>
+                <button type="button" id="Edu" onclick=showEdu()>Educacion</button>
             </section>
-            <section class="MainMenu">
-                <img class="bar" src="VectorialDraws/undraw_bar-chart.svg" alt="barChart"/>
-                <p>CONTENIDOS</p>
-                <ul>
-                    <li>
-                        <a href="index.html" class="active">HOME</a>
-                    </li>
-                    <li>
-                        <a href="CV.html">CV</a>
-                    </li>
-                    <li>
-                        <a href="aficiones.html">AFICIONES</a>
-                    </li>
-                    <li>
-                        <a href="contacto.html">CONTACTO</a>
-                    </li>
-                    <li>
-                        <a href="juego.html">JUEGO</a>
-                    </li>
-                </ul>
-                <img class="Underline" src="VectorialDraws/undraw_double-underline.svg" alt="underline"/>
-                <img class="Chevronse" src="VectorialDraws/undraw_chevrons.svg" alt="chevrons"/>
-                <img class="Circle" src="VectorialDraws/undraw_circled-plus.svg" alt="circled"/>
-                <img class="Tareas" src="VectorialDraws/undraw_asymmetric-parallels.svg" alt="menu"/>
+            <section class="display">
+                <section class="screen">
+                    <img src="VectorialDraws/img.png" alt="background" id="backCV"/>
+                    <h1 id="TitleCV"></h1>
+                    <article id="ContentCV"><img id="data" src="VectorialDraws/animation.gif" alt="gif" /></article>
+                </section>
             </section>
         </main>
         <footer class="Cabecera">
@@ -72,10 +51,10 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html" class="active">HOME</a>
+                        <a href="index.html" >HOME</a>
                     </li>
                     <li>
-                        <a href="CV.html">CV</a>
+                        <a href="CV.html" class="active">CV</a>
                     </li>
                     <li>
                         <a href="aficiones.html">AFICIONES</a>
@@ -101,6 +80,31 @@
             cursor.style.left = mouseX + 'px';
             cursor.style.top = mouseY + 'px';
         });
+        
+        function showExpr(){
+            let titulo=document.getElementById('TitleCV');
+            titulo.innerHTML="Experiencia Laboral 🏢";
+            
+            let contenido=document.getElementById('ContentCV');
+            contenido.innerHTML=("<ul><li><h2>Casa Tarradellas</h2><p>Junio 2023 - Septiembre 2023</p><p>Operario en alimentación</p></li></ul>");
+            
+            let imagen=document.getElementById('backCV');
+            imagen.src="VectorialDraws/undraw_working_from_anywhere_re_9obt.svg";
+        }
+        
+        function showEdu(){
+            let titulo=document.getElementById('TitleCV');
+            titulo.innerHTML="Educación 🎓";
+            
+            let contenido=document.getElementById('ContentCV');
+            contenido.innerHTML=("<ul><li><h2>ENTI-UB</h2><p>Septiembre 2023 - Actualidad</p><p>Desarrollo de Aplicaciones Multiplataforma - Videojuegos y Ocio Digital</p></li><li><h2>IES Tona</h2><p>Septiembre 2021 - Mayo 2023</p><p>Bachillerato Cientificotecnológico</p></li></ul>");
+            
+            let imagen=document.getElementById('backCV');
+            imagen.src="VectorialDraws/undraw_graduation_re_gthn.svg"
+            
+        }
+        
+        
     
     </script>
 </html>

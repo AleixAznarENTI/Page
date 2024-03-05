@@ -15,13 +15,13 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html" class="active">HOME</a>
+                        <a href="index.html" >HOME</a>
                     </li>
                     <li>
                         <a href="CV.html">CV</a>
                     </li>
                     <li>
-                        <a href="aficiones.html">AFICIONES</a>
+                        <a href="aficiones.html" class="active">AFICIONES</a>
                     </li>
                     <li>
                         <a href="contacto.html">CONTACTO</a>
@@ -33,38 +33,21 @@
             </nav>
         </header>
         <main>
-            <img class="MainImage" src="VectorialDraws/undraw_city_life_gnpr.svg" alt="svg-image"/>
-            <img class="ConnectImage" src="VectorialDraws/undraw_dashed-underline.svg" alt="svg-connect"/>
-            <img class="Indicator1" src="VectorialDraws/undraw_fun-arrow.svg" alt="arrow"/>
-            <img class="Indicator2" src="VectorialDraws/undraw_arrow.svg" alt="arrow"/>
-            <section class="PaginaPrincipal">
-                <h1 class="animTitle1">ALEIX</h1>
-                <h1 class="animTitle1">AZNAR</h1>
-            </section>
-            <section class="MainMenu">
-                <img class="bar" src="VectorialDraws/undraw_bar-chart.svg" alt="barChart"/>
-                <p>CONTENIDOS</p>
+            <section class="Aficiones">
                 <ul>
-                    <li>
-                        <a href="index.html" class="active">HOME</a>
+                    <li id="gaming" class="Aficion">
+                        <img src="VectorialDraws/undraw_gaming_re_cma2.svg" alt="photo" />
+                        <button type="button"><img src="VectorialDraws/play-button-svgrepo-com.svg" alt="button" onclick=Gaming() /></button>
                     </li>
-                    <li>
-                        <a href="CV.html">CV</a>
+                    <li id="sport" class="Aficion">
+                        <img src="VectorialDraws/undraw_ninja_e-52-b.svg" alt="photo"/>
+                        <button type="button"><img src="VectorialDraws/play-button-svgrepo-com.svg" alt="button" onclick=Sports() /></button>
                     </li>
-                    <li>
-                        <a href="aficiones.html">AFICIONES</a>
-                    </li>
-                    <li>
-                        <a href="contacto.html">CONTACTO</a>
-                    </li>
-                    <li>
-                        <a href="juego.html">JUEGO</a>
+                    <li id="code" class="Aficion">
+                        <img src="VectorialDraws/undraw_hacker_mind_-6-y85.svg" alt="photo" />
+                        <button type="button"><img src="VectorialDraws/play-button-svgrepo-com.svg" alt="button" onclick=Code() /></button>
                     </li>
                 </ul>
-                <img class="Underline" src="VectorialDraws/undraw_double-underline.svg" alt="underline"/>
-                <img class="Chevronse" src="VectorialDraws/undraw_chevrons.svg" alt="chevrons"/>
-                <img class="Circle" src="VectorialDraws/undraw_circled-plus.svg" alt="circled"/>
-                <img class="Tareas" src="VectorialDraws/undraw_asymmetric-parallels.svg" alt="menu"/>
             </section>
         </main>
         <footer class="Cabecera">
@@ -72,13 +55,13 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html" class="active">HOME</a>
+                        <a href="index.html" >HOME</a>
                     </li>
                     <li>
                         <a href="CV.html">CV</a>
                     </li>
                     <li>
-                        <a href="aficiones.html">AFICIONES</a>
+                        <a href="aficiones.html" class="active">AFICIONES</a>
                     </li>
                     <li>
                         <a href="contacto.html">CONTACTO</a>
@@ -101,6 +84,21 @@
             cursor.style.left = mouseX + 'px';
             cursor.style.top = mouseY + 'px';
         });
+        
+        
+        function Gaming() {
+            let game = document.getElementById('gaming');
+            game.innerHTML=("<h1>JUGAR</h1><ul><li><p>OSU!</p></li><li><p>GENSHIN IMPACT</p></li><li><p>Geometry Dash</p></li></ul>");
+        }
+        
+        function Sports(){
+            let spr = document.getElementById('sport');
+            spr.innerHTML=("<h1>DEPORTES</h1><ul><li><p>TaeKwon-Do</p></li><li><p>GYM</p></li></ul>");
+        }
+        function Code(){
+            let cod = document.getElementById('code');
+            cod.innerHTML=("<h1>PROGRAMAR</h1><ul><li><p>C++</p></li><li><p>C#</p></li><li><p>HTML/CSS</p></li></ul>");
+        }
     
     </script>
 </html>

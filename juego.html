@@ -15,7 +15,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html" class="active">HOME</a>
+                        <a href="index.html" >HOME</a>
                     </li>
                     <li>
                         <a href="CV.html">CV</a>
@@ -27,44 +27,27 @@
                         <a href="contacto.html">CONTACTO</a>
                     </li>
                     <li>
-                        <a href="juego.html">JUEGO</a>
+                        <a href="juego.html" class="active">JUEGO</a>
                     </li>
                 </ul>
             </nav>
         </header>
         <main>
-            <img class="MainImage" src="VectorialDraws/undraw_city_life_gnpr.svg" alt="svg-image"/>
-            <img class="ConnectImage" src="VectorialDraws/undraw_dashed-underline.svg" alt="svg-connect"/>
-            <img class="Indicator1" src="VectorialDraws/undraw_fun-arrow.svg" alt="arrow"/>
-            <img class="Indicator2" src="VectorialDraws/undraw_arrow.svg" alt="arrow"/>
-            <section class="PaginaPrincipal">
-                <h1 class="animTitle1">ALEIX</h1>
-                <h1 class="animTitle1">AZNAR</h1>
-            </section>
-            <section class="MainMenu">
-                <img class="bar" src="VectorialDraws/undraw_bar-chart.svg" alt="barChart"/>
-                <p>CONTENIDOS</p>
+            <section class="Game">
                 <ul>
                     <li>
-                        <a href="index.html" class="active">HOME</a>
+                        <h1>JUEGO</h1>
+                        <p>Adivina el número del 1 al 100</p>
+                        <p id="numero">#</p>
+                        <input type="text" id="Respuesta" placeholder="Inserta el número aqui" />
+                        <button type="button" id="Enviar">Enviar Respuesta</button>
+                        <button type="button"  id="Reset">Reiniciar</button>
                     </li>
-                    <li>
-                        <a href="CV.html">CV</a>
-                    </li>
-                    <li>
-                        <a href="aficiones.html">AFICIONES</a>
-                    </li>
-                    <li>
-                        <a href="contacto.html">CONTACTO</a>
-                    </li>
-                    <li>
-                        <a href="juego.html">JUEGO</a>
+                    <li class="help">
+                        <h1>AYUDA</h1>
+                        <p id="help" >></p>
                     </li>
                 </ul>
-                <img class="Underline" src="VectorialDraws/undraw_double-underline.svg" alt="underline"/>
-                <img class="Chevronse" src="VectorialDraws/undraw_chevrons.svg" alt="chevrons"/>
-                <img class="Circle" src="VectorialDraws/undraw_circled-plus.svg" alt="circled"/>
-                <img class="Tareas" src="VectorialDraws/undraw_asymmetric-parallels.svg" alt="menu"/>
             </section>
         </main>
         <footer class="Cabecera">
@@ -72,7 +55,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="index.html" class="active">HOME</a>
+                        <a href="index.html" >HOME</a>
                     </li>
                     <li>
                         <a href="CV.html">CV</a>
@@ -84,7 +67,7 @@
                         <a href="contacto.html">CONTACTO</a>
                     </li>
                     <li>
-                        <a href="juego.html">JUEGO</a>
+                        <a href="juego.html" class="active">JUEGO</a>
                     </li>
                 </ul>
             </nav>
@@ -101,6 +84,42 @@
             cursor.style.left = mouseX + 'px';
             cursor.style.top = mouseY + 'px';
         });
+        
+        
+        let num = Math.floor(Math.random() * 100) + 1;
+        console.log(num);
+        
+        
+        
+        
+        let sendBut = document.getElementById('Enviar');
+        let resetBut = document.getElementById('Reset');
+        let text = document.getElementById('help');
+        
+        resetBut.addEventListener("click",
+            function reiniciar(){
+            num = Math.floor(Math.random() * 100) + 1;
+            text.innerHTML="> El número se ha reiniciado!";
+        });
+        
+        sendBut.addEventListener("click",
+        function resp(){
+            
+            let answer = document.getElementById('Respuesta');
+            let numero = document.getElementById('numero');
+            
+            if(answer.value < num){
+                text.innerHTML="> El número es más grande!";
+            }
+            else if(answer.value > num){
+                text.innerHTML="> El número es más pequeño!";
+            }
+            else{
+                text.innerHTML="Has acertado!";
+                numero.innerHTML="El número era: " + num;
+            }
+        });
+        
     
     </script>
 </html>

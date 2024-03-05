@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+        <title>Page</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header class="Cabecera">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html" >HOME</a>
+                    </li>
+                    <li>
+                        <a href="CV.html">CV</a>
+                    </li>
+                    <li>
+                        <a href="aficiones.html">AFICIONES</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html" class="active">CONTACTO</a>
+                    </li>
+                    <li>
+                        <a href="juego.html">JUEGO</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <img src="VectorialDraws/9000470_4067830.svg" alt="back1" id="back1" />
+            <img src="VectorialDraws/12084824_20943984.svg" alt="back2" id="back2" />
+            <section class="contactMe">
+                <h1>CONTACTO</h1>
+                <p id="Adv"></p>
+                <form>
+                    <p>
+                        <label for="Nombre">Nombre:</label>
+                        <input type="text" id="Nombre" placeholder="Introduce tu nombre" required />
+                    </p>
+                    <p>
+                        <label for="Correo">Correo:</label>
+                        <input type="email" id="Correo" placeholder="Introduce tu correo" required />
+                    </p>
+                    <p>
+                        <label for="Telf">Teléfono:</label>
+                        <input type="tel" id="Telf" placeholder="Número de teléfono" required />
+                    </p>
+                    <p><button type="reset" id="dlte">Borrar Todo</button></p>
+                    <p><button type="button" id="send">Enviar</button></p>
+                </form>
+            </section>
+        </main>
+        <footer class="Cabecera">
+            <p>Copyright 2024 ©</p>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html" >HOME</a>
+                    </li>
+                    <li>
+                        <a href="CV.html">CV</a>
+                    </li>
+                    <li>
+                        <a href="aficiones.html">AFICIONES</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html" class="active">CONTACTO</a>
+                    </li>
+                    <li>
+                        <a href="juego.html">JUEGO</a>
+                    </li>
+                </ul>
+            </nav>
+        </footer>
+        <div class="cursor" id="cursor"></div>
+    </body>
+    <script>
+        
+        let cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove',function mousePosition(e){
+            let mouseX = e.clientX;
+            let mouseY = e.clientY;
+            
+            cursor.style.left = mouseX + 'px';
+            cursor.style.top = mouseY + 'px';
+        });
+        
+        let boton = document.getElementById('send');
+        
+        boton.addEventListener("click", checkForm);
+        
+        function checkForm(){
+            let nombre = document.getElementById('Nombre');
+            let correo = document.getElementById('Correo');
+            let telefono = document.getElementById('Telf');
+            let adver = document.getElementById('Adv');
+            
+            if((nombre.value.length < 2 || nombre.value.length > 20)|| nombre.value==null){
+                nombre.style.border="2px solid red";
+                adver.innerHTML = "Nombre muy corto o muy largo.";
+            }
+            else{
+                nombre.style.border="2px solid green";
+                if(correo.value.length < 10){
+                   correo.style.border="2px solid red";
+                    adver.innerHTML = "Correo Inválido";
+                }
+                else{
+                    correo.style.border="2px solid green";
+                    if(telefono.value.length != 9){
+                        telefono.style.border="2px solid red";
+                        adver.innerHTML = "Formato de teléfono incorrecto";
+                    }
+                    else{
+                        telefono.style.border="2px solid green";
+                        adver.style.color="green";
+                        adver.innerHTML = "Formulario enviado!"
+                        nombre.value='';
+                        correo.value='';
+                        telefono.value='';
+                    }
+                }
+                
+            }
+            
+        }
+    
+    </script>
+</html>
